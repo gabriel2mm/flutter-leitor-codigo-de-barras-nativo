@@ -1,6 +1,6 @@
-# app
+# plugin_example_example
 
-A new Flutter project.
+Demonstrates how to use the plugin_example plugin.
 
 ## Getting Started
 
