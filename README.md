@@ -1,22 +1,4 @@
-<<<<<<< HEAD
-# app
+# Evidência
 
-A new Flutter project.
+https://github.com/user-attachments/assets/7e0c0fa3-8141-445b-9983-5a3d0b22fd5a
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
-# flutter-leitor-codigo-de-barras-nativo
-POC de conceito para ler código de barras utilizando o próprio SDK do SO (Apenas android) 
->>>>>>> 8b2d9bb (Initial commit)
