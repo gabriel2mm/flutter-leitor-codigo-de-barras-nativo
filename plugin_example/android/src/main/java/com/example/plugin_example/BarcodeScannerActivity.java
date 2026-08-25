@@ -32,10 +32,6 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/**
- * Activity for scanning barcodes using CameraX + ML Kit Barcode Scanning API.
- * Supports Brazilian barcode formats: EAN-13, EAN-8, UPC-A, UPC-E, Code 128, Code 39, ITF-14, QR Code, Data Matrix
- */
 public class BarcodeScannerActivity extends AppCompatActivity {
   private static final String TAG = "BarcodeScannerActivity";
   
@@ -50,7 +46,6 @@ public class BarcodeScannerActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    // Set fullscreen flags
     getWindow().setFlags(
         WindowManager.LayoutParams.FLAG_FULLSCREEN,
         WindowManager.LayoutParams.FLAG_FULLSCREEN
@@ -73,7 +68,6 @@ public class BarcodeScannerActivity extends AppCompatActivity {
   }
   
   private void setupBarcodeScanner() {
-    // Configure barcode scanner for Brazilian barcode formats
     BarcodeScannerOptions options = new BarcodeScannerOptions.Builder()
         .setBarcodeFormats(
             Barcode.FORMAT_EAN_13 |
@@ -107,22 +101,16 @@ public class BarcodeScannerActivity extends AppCompatActivity {
   }
   
   private void bindCameraUseCases() {
-    // Preview use case
     Preview preview = new Preview.Builder().build();
     preview.setSurfaceProvider(previewView.getSurfaceProvider());
     
-    // Image analysis use case for barcode scanning
     ImageAnalysis imageAnalysis = new ImageAnalysis.Builder()
         .setTargetResolution(new Size(1280, 720))
         .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
         .build();
     
     imageAnalysis.setAnalyzer(cameraExecutor, this::analyzeImage);
-    
-    // Camera selector for back camera
     CameraSelector cameraSelector = CameraSelector.DEFAULT_BACK_CAMERA;
-    
-    // Bind use cases to lifecycle
     cameraProvider.unbindAll();
     cameraProvider.bindToLifecycle(this, cameraSelector, preview, imageAnalysis);
     
